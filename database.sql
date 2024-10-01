@@ -1,0 +1,20 @@
+CREATE DATABASE php_login_management;
+
+CREATE DATABASE php_login_management_test;
+
+CREATE TABLE users (
+	id VARCHAR(255) PRIMARY KEY,
+	NAME VARCHAR(255) NOT NULL,
+	PASSWORD VARCHAR(255) NOT NULL
+) ENGINE INNODB;
+
+CREATE TABLE sessions(
+	id VARCHAR(255) PRIMARY KEY, 
+	user_id VARCHAR(255) NOT NULL
+
+) ENGINE INNODB;
+
+ALTER TABLE sessions
+ADD CONSTRAINT fk_sessions_user
+FOREIGN KEY (user_id)
+REFERENCES users(id);
