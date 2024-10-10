@@ -71,8 +71,6 @@ class UserController {
         }
 
 
-        $this->userService->login($request);
-
     }
 
 }
