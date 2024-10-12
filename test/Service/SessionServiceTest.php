@@ -9,6 +9,10 @@ use ProgrammerZamanNow\Belajar\PHP\MVC\Domain\User;
 use ProgrammerZamanNow\Belajar\PHP\MVC\Repository\SessionRepository;
 use ProgrammerZamanNow\Belajar\PHP\MVC\Repository\UserRepository;
 
+function setcookie(string $name, string $value){
+    echo "$name: $value";
+}
+
 
 class SessionServiceTest extends TestCase {
 
