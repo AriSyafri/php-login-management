@@ -23,7 +23,7 @@ class UserRepository {
     }
 
     public function update(User $user): User{
-        $statement = $this->connection->prepare("SELECT name = ?, password = ? WHERE id = ?");
+        $statement = $this->connection->prepare("UPDATE users SET name = ?, password = ? WHERE id = ?");
         $statement->execute([
             $user->name, $user->password, $user->id
         ]);
