@@ -22,6 +22,14 @@ class UserRepository {
         return $user;
     }
 
+    public function update(User $user): User{
+        $statement = $this->connection->prepare("SELECT name = ?, password = ? WHERE id = ?");
+        $statement->execute([
+            $user->name, $user->password, $user->id
+        ]);
+        return $user;
+    }
+
     public function findById(string $id): ?User {
         
         $statement = $this->connection->prepare("SELECT id, name, password FROM users WHERE id = ?");
