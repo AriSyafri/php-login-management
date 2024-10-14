@@ -83,7 +83,7 @@ use ProgrammerZamanNow\Belajar\PHP\MVC\Model\UserRegisterRequest;
             }
         }
 
-        private function updateProfile(UserProfileUpdateRequest $request): UserProfileUpdateResponse {
+        public function updateProfile(UserProfileUpdateRequest $request): UserProfileUpdateResponse {
 
             $this->validateUserProfileUpdateRequest($request);
 
@@ -96,7 +96,7 @@ use ProgrammerZamanNow\Belajar\PHP\MVC\Model\UserRegisterRequest;
                 }
 
                 $user->name = $request->name;
-                $this->userRepository->save($user);
+                $this->userRepository->update($user);
                 
                 Database::commitTransaction();
 
